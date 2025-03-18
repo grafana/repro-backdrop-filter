@@ -23,6 +23,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
+        index: resolve(__dirname, "index.html"),
         grafanaUiSimple: resolve(__dirname, "grafana-ui-simple.html"),
         grafanaUiGlobalStyles: resolve(
           __dirname,
