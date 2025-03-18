@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [inputValue, setInputValue] = useState("");
 
   return (
     <>
@@ -153,13 +154,21 @@ export default function App() {
         </p>
       </div>
 
-      <Modal
-        title="Modal"
-        isOpen={isModalOpen}
-        onDismiss={() => setIsModalOpen(false)}
-      >
-        <p>Modal content</p>
-      </Modal>
+      {isModalOpen && (
+        <Modal
+          title="Modal"
+          isOpen={isModalOpen}
+          onDismiss={() => setIsModalOpen(false)}
+        >
+          <p>Modal content</p>
+          <input
+            placeholder="Type here"
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+        </Modal>
+      )}
     </>
   );
 }
