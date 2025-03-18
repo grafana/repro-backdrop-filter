@@ -1,4 +1,4 @@
-import { Button, Modal } from "@grafana/ui";
+import { Button, GlobalStyles, Modal } from "@grafana/ui";
 import { useState } from "react";
 
 export default function App() {
@@ -6,6 +6,8 @@ export default function App() {
 
   return (
     <>
+      <GlobalStyles />
+
       <div>
         <Button onClick={() => setIsModalOpen(true)}>Open modal</Button>
 
